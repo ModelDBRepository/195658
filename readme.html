@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<meta name="generator" content="Bluefish 2.2.5" />
+	<style type="text/css">
+		tab { padding-left: 2em; }
+	</style>
+</head>
+<body>
+<p>
+<h4>
+	<i>These Cython/Python scripts associated with paper (manuscript):</i><br/>
+	Ruben A. Tikidji-Hamburyan , Tarek A. El-Ghazawi , Jason W. Triplett<br/>
+    <h3><tab/>Novel Models of Visual Topographic Map Alignment in the Superior Colliculus</h3><br/>
+    <!--
+    <i>J Neuroscience 2015 35(47): 15682-15695; doi: 10.1523/JNEUROSCI.2601-15.2015</i><br/>
+    -->
+</h4>
+ 
+</p><hr/>
+
+<p>To use theses scripts you need python libraries:
+<ol>
+	<li><a href="http://www.numpy.org">numpy</a></li>
+	<li><a href="http://www.scipy.org">scipy</a></li>
+	<li><a href="http://matplotlib.org">matplotlib</a> and LaTeX for correct graphical interface</li>
+	<li><a href="http://cython.org/">cython</a></li>
+</ol>
+Under <u>Ubuntu</u> or any other <u>Debian</u> based Linux, run <br/><b>sudo apt-get install python-numpy python-scipy python-matplotlib texlive-full cython</b>.<p/>
+You can use <b>yum</b> or <b>zymm</b> under <u>RadHad</u> or <u>SUSE</u> based Linux distributions. <p/>
+You may also use <b>sudo pip install numpu scipy matloblib cython</b> in any distribution. </p>
+
+<hr/>
+
+<p> 			
+	To run simulations with small number of steps Nstep=2000 (<i>requires around 4 hours on a desktop</i>):<br/>
+	<tab/><b>./runsimulation.sh</b> <br/>
+</p>
+<p>
+	Same simulations but with a progress indicator(<i>requires around 4 hours on a desktop</i>):<br/>
+	<tab/><b>INDICATOR=True ./runsimulation.sh</b> <br/>
+</p>
+<p>
+	To run simulations with the same number of steps as in the paper (manuscript) Nstep=15000 (<i>requires around 16-20 hours on a desktop</i>):<br/>
+	<tab/><b>NSTEP=15000 ./runsimulation.sh</b><br/>
+</p>
+<p>
+	To run simulations with the same number of steps as in the paper (manuscript) and with a progress indicator (<i>requires around 16-20 hours on a desktop</i>):<br/>
+	<tab/><b>INDICATOR=True NSTEP=15000 ./runsimulation.sh</b><br/>
+</p>
+<p>
+	Do <u>not</u> simulate but plot graphs from existed database:<br/>
+	<tab/><b>NSTEP=0 ./runsimulation.sh</b>
+</p>
+<p>
+Any command above should show three figures with 6 plots each. Each plot on a figure corresponds to particular model and mice mutant.
+<table cellpadding="20%">
+<tr>
+<td/><td/>
+<td>  Correlational model - Wiled Type<sup></sup> </td>
+<td>  Correlational model - <i>Isl<sup>EphA/EphA</sup></i> </td>
+<td>  Correlational model - <i>Isl<sup>EphA/EphA</sup> / &#946;2<sup>-/-</sup></i> </td>
+</tr>
+<tr>
+<td/><td/>
+<td>  Integrational model - Wiled Type<sup></sup> </td>
+<td>  Integrational model - <i>Isl<sup>EphA/EphA</sup></i> </td>
+<td>  Integrational model - <i>Isl<sup>EphA/EphA</sup> / &#946;2<sup>-/-</sup></i> </td>
+</tr>
+</table>
+</p>
+<p>
+The accuracy of connectivity pattern depends on the number of steps. Figures below are examples for Nstep=15000.  
+<table cellpadding="30%" border="border" align="center" bgcolor="#E5E5E5" width="90%" frame="box" rules="all">
+<tr align="center">
+<td>Termination points<br/><img src="projections.jpeg" width="90%" alt="" align="middle" border="-1" hspace="3" vspace="3"></td>
+<td>Density distribution<br/><img src="density.jpeg"   width="90%"  alt="" align="middle" border="-1" hspace="3" vspace="3"></td>
+<td>Density Samples<br /><img src="samples.jpeg"       width="90%"  alt="" align="middle" border="-1" hspace="3" vspace="3"></td>
+</tr>
+</table>
+</p>
+<hr/>
+<p>
+Files in this directory
+<table>
+<tr>
+<td width="20%" align="right" valign="middle"><b>EnergyChaser.pyx</b></td>
+<td>Cython main code</td>
+</tr>
+<tr>
+<td width="20%" align="right" valign="middle"><b>EnergyModel.py</b></td>
+<td>Python parameters parser and EnergyChaser wrapper</td>
+</tr>
+<tr>
+<td width="20%" align="right" valign="middle"><b>steup.py</b></td>
+<td>Setup script for the Energy Model and Chaser</td>
+</tr>
+<tr>
+<td width="20%" align="right" valign="middle"><b>2D-View.py</b></td>
+<td>- plots 2D terminal zones</td>
+</tr>
+<td width="20%" align="right" valign="middle"><b>1D-DensityView.py</b></td>
+<td>- plots 1D density distribution of terminal zones along an NT or DV axis</td>
+</tr>
+<td width="20%" align="right" valign="middle"><b>runsimulation.sh</b></td>
+<td>- helper script</td>
+</tr>
+<td width="20%" align="right" valign="middle"><b>20160910104211-402-tot.db.gz</b></td>
+<td>An example of simulation result for Nstep=15000</td>
+</tr>
+
+</table>
+
+
+</p>
+
+
+</body>
+</html>
+
+
+
+
+
+
